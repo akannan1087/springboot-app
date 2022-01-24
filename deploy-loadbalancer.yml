@@ -1,0 +1,34 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ak-angular-app-poc-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: ak-angular-app
+  template:
+    metadata:
+      labels:
+        app: ak-angular-app
+    spec:
+      containers:
+      - name: ak-angular-app
+        image: ananthkannan/myspringbootapp:latest
+        ports:
+        - containerPort: 8085
+        
+# service type loadbalancer       
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: ak-angular-svc
+spec:
+  selector:
+    app: ak-angular-app
+  ports:
+    - protocol: TCP
+      port: 8085
+      targetPort: 8085
+  type: LoadBalancer

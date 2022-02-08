@@ -1,7 +1,9 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: my-springboot-app-deployment
+  labels:
+    app: springboot-app
+  name: springboot-app
 spec:
   replicas: 2
   selector:
@@ -25,13 +27,16 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: springboot-app-svc
-spec:
-  selector:
+  labels:
     app: springboot-app
+    k8s-app: springboot-app
+  name: springboot-app
+spec:
   ports:
   - name: http
     port: 80
     protocol: TCP
     targetPort: http
   type: LoadBalancer
+  selector:
+    app: springboot-app

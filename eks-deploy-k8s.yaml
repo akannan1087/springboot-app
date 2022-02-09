@@ -19,7 +19,7 @@ spec:
         image: 211223789150.dkr.ecr.us-east-2.amazonaws.com/my-docker-repo
         imagePullPolicy: Always
         ports:
-        - containerPort: 80
+        - containerPort: 8085
           name: http
           protocol: TCP
 # service type loadbalancer       
@@ -36,7 +36,7 @@ spec:
   - name: http
     port: 80
     protocol: TCP
-    targetPort: http
+    targetPort: 8085
   type: LoadBalancer
   selector:
     app: springboot-app

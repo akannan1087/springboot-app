@@ -23,12 +23,16 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: springboot-app-svc
+  labels:
+    app: springboot-app
+    k8s-app: springboot-app
+  name: springboot-app
 spec:
+  ports:
+  - name: http
+    port: 80
+    protocol: TCP
+    targetPort: 8085
+  type: LoadBalancer
   selector:
     app: springboot-app
-  ports:
-    - protocol: TCP
-      port: 80
-      targetPort: 8085
-  type: LoadBalancer

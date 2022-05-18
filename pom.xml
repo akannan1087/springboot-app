@@ -7,7 +7,7 @@
     <artifactId>springbootApp</artifactId>
     <version>0.0.1</version>
     <packaging>jar</packaging>
-    <name>QAApp</name>
+    <name>MyAwesomeApp</name>
     <description>SpringBoot Angularjs</description>
  
     <parent>

@@ -124,8 +124,7 @@ stages:
               action: deploy
               namespace: $(k8sNamespaceForPR)
               manifests: |
-                $(Pipeline.Workspace)/manifests/deployment.yml
-                $(Pipeline.Workspace)/manifests/service.yml
+                $(Pipeline.Workspace)/aks-deploy-from-acr.yaml
               imagePullSecrets: |
                 $(imagePullSecret)
               containers: |

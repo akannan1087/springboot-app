@@ -12,6 +12,7 @@ variables:
   tag: '$(Build.BuildId)'
 
 stages:
+
 - stage: Build
   displayName: Build image
   jobs:
@@ -20,6 +21,16 @@ stages:
     pool:
       vmImage: ubuntu-latest
     steps:
+    - task: Maven@4
+      inputs:
+        mavenPomFile: 'pom.xml'
+        publishJUnitResults: true
+        testResultsFiles: '**/surefire-reports/TEST-*.xml'
+        javaHomeOption: 'JDKVersion'
+        mavenVersionOption: 'Default'
+        mavenAuthenticateFeed: false
+        effectivePomSkip: false
+        sonarQubeRunAnalysis: false
     - task: Docker@2
       displayName: Build an image
       inputs:

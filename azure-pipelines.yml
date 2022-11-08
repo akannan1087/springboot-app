@@ -38,3 +38,9 @@ stages:
         dockerfile: '$(Build.SourcesDirectory)/Dockerfile'
         tags: |
           $(tag)
+    - task: ECRPushImage@1
+      inputs:
+        awsCredentials: 'AWS_Nov_22'
+        regionName: 'us-east-1'
+        imageSource: 'imagename'
+        repositoryName: 'my-sample-docker-repo'

@@ -45,4 +45,7 @@ stages:
         awsCredentials: 'AWS_Nov_22'
         regionName: 'us-east-1'
         imageSource: 'imagename'
+        sourceImageName: $(DOCKER_REPOSITORY_NAME)
+        sourceImageTag: $(Build.BuildId)
+        pushTag: latest
         repositoryName: 'my-sample-docker-repo'

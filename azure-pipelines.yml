@@ -39,7 +39,15 @@ stages:
         dockerfile: '$(Build.SourcesDirectory)/Dockerfile'
         tags: |
           $(tag)
-
+    - task: CopyFiles@2
+      inputs:
+        Contents: '*.yaml'
+        TargetFolder: '$(build.artifactstagingdirectory)'
+    - task: PublishBuildArtifacts@1
+      inputs:
+        PathtoPublish: '$(Build.ArtifactStagingDirectory)'
+        ArtifactName: 'drop'
+        publishLocation: 'Container'
     - task: ECRPushImage@1
       inputs:
         awsCredentials: 'AWS_Nov_22'

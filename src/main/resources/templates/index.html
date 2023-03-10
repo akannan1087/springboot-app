@@ -13,7 +13,7 @@
  
 <div class="container" ng-app="app">
  
-    <h3 style="color:blue"> My Awesome Spring Boot App Running on Kubernetes Cluster </h3>
+    <h3 style="color:blue"> My Awesome Spring Boot App Running on EKS Cluster </h3>
     
     <div ng-controller="postcontroller">
         <form class="form-horizontal" name="customerForm" ng-submit="submitForm()">
@@ -44,6 +44,8 @@
     </div>
     
     <div class="col-sm-offset-2 col-sm-10" ng-controller="getcontroller">
+          <p>Current Date and Time is <span id='date-time'></span>.</p>
+
         <button id="getAllCustomersId" type="button" class="btn btn-primary" ng-click="getfunction()">Get All Customers!</button>
         <ul>
             <li ng-repeat="cust in response">{{cust.firstname + " " + cust.lastname}}</li>

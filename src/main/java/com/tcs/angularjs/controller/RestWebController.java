@@ -24,6 +24,6 @@ public class RestWebController {
     public String postCustomer(@RequestBody Customer customer){
         cust.add(customer);
         
-        return "Sucessful!";
+        return "Sucessful jod done!";
     }
 }

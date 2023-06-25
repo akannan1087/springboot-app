@@ -5,7 +5,7 @@ metadata:
     app: springboot-app
   name: springboot-app
 spec:
-  replicas: 4
+  replicas: 2
   selector:
     matchLabels:
       app: springboot-app
@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: my-springboot-app
-        image: 211223789150.dkr.ecr.us-east-1.amazonaws.com/my-springboot-app:latest
+        image: 134916288460.dkr.ecr.us-east-1.amazonaws.com/demo-jenkins:latest
         imagePullPolicy: Always
         ports:
         - containerPort: 8085

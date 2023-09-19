@@ -15,21 +15,15 @@ spec:
         app: springboot-app
     spec:
       containers:
-      - name: my-springboot-app
-        image: 813737678723.dkr.ecr.us-west-2.amazonaws.com/mydockerrepo
-        imagePullPolicy: Always
-        ports:
-        - containerPort: 8085
-          name: http
-          protocol: TCP
-# service type loadbalancer       
+        - name: my-springboot-app
+          image: 813737678723.dkr.ecr.us-west-2.amazonaws.com/mydockerrepo
+          ports:
+            - containerPort: 8085
+
 ---
 apiVersion: v1
 kind: Service
 metadata:
-  labels:
-    app: springboot-app
-    k8s-app: springboot-app
   name: springboot-app
 spec:
   selector:

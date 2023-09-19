@@ -32,11 +32,8 @@ metadata:
     k8s-app: springboot-app
   name: springboot-app
 spec:
-  ports:
- # - name: http
-  #  port: 8085
-   # protocol: TCP
-    targetPort: 8085
-  type: NodePort
   selector:
     app: springboot-app
+  type: NodePort
+  ports:
+    - port: 8085

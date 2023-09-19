@@ -34,7 +34,7 @@ metadata:
 spec:
   ports:
   - name: http
-    port: 80
+    port: 8085
     protocol: TCP
     targetPort: 8085
   type: NodePort

@@ -33,9 +33,9 @@ metadata:
   name: springboot-app
 spec:
   ports:
-  - name: http
-    port: 8085
-    protocol: TCP
+ # - name: http
+  #  port: 8085
+   # protocol: TCP
     targetPort: 8085
   type: NodePort
   selector:

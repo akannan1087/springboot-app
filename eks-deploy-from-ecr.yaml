@@ -18,9 +18,9 @@ spec:
         imagePullPolicy: Always
         ports:
         - containerPort: 8085
-    env:
-      - name: IMAGE_TAG
-        value: latest  # This can be overridden dynamically
+        env:
+        - name: IMAGE_TAG
+          value: "latest" 
 # service type loadbalancer       
 ---
 apiVersion: v1

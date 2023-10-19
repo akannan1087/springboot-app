@@ -20,7 +20,7 @@ spec:
         - containerPort: 8085
     env:
       - name: IMAGE_TAG
-        value: "latest"  # This can be overridden dynamically
+        value: latest  # This can be overridden dynamically
 # service type loadbalancer       
 ---
 apiVersion: v1

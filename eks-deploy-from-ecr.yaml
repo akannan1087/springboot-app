@@ -14,10 +14,13 @@ spec:
     spec:
       containers:
       - name: my-springboot-app
-        image: 211223789150.dkr.ecr.us-east-1.amazonaws.com/my-docker-repo
+        image: 211223789150.dkr.ecr.us-east-1.amazonaws.com/my-docker-repo:$(IMAGE_TAG)
         imagePullPolicy: Always
         ports:
         - containerPort: 8085
+    env:
+      - name: IMAGE_TAG
+        value: "latest"  # This can be overridden dynamically
 # service type loadbalancer       
 ---
 apiVersion: v1

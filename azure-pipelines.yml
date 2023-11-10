@@ -42,7 +42,7 @@ stages:
     - task: JFrogDocker@1
       inputs:
         command: 'Push'
-        artifactoryConnection: 'Artifactory_svc'
+        artifactoryConnection: 'Art_SVC_conn'
         imageName: '$(imageName)'
         threads: '3'
         skipLogin: false

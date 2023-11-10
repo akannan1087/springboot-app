@@ -39,10 +39,9 @@ stages:
         repository: $(imageName)
         tags: |
           $(tag)
-    - task: JFrogDocker@1
+    - task: ArtifactoryDocker@1
       inputs:
-        command: 'Push'
-        artifactoryConnection: 'Art_SVC_conn'
+        command: 'push'
+        artifactoryService: 'Art_SVC_conn'
+        targetRepo: 'docker-local'
         imageName: '$(imageName)'
-        threads: '3'
-        skipLogin: false

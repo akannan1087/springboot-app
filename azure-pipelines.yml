@@ -39,12 +39,10 @@ stages:
         repository: $(imageName)
         tags: |
           $(tag)
-    - task: ECRPushImage@1
+    - task: JFrogDocker@1
       inputs:
-        awsCredentials: 'my_aws_conn'
-        regionName: 'us-east-1'
-        imageSource: 'imageid'
-        sourceImageId: '$(imageName):$(tag)'
-        repositoryName: '$(repoName)'
-        pushTag: '$(tag)'
-        forceDockerNamingConventions: true
+        command: 'Push'
+        artifactoryConnection: 'Artifactory_svc'
+        imageName: '$(imageName)'
+        threads: '3'
+        skipLogin: false

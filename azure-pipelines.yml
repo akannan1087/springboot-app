@@ -37,7 +37,6 @@ stages:
         command: build
         dockerfile: '$(Build.SourcesDirectory)/Dockerfile'
         repository: $(imageName)
-        containerRegistry: $(repoName)
         tags: |
           $(tag)
     - task: ArtifactoryDocker@1

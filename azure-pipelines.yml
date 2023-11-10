@@ -37,6 +37,7 @@ stages:
         command: build
         dockerfile: '$(Build.SourcesDirectory)/Dockerfile'
         repository: $(imageName)
+        containerRegistry: $(repoName)
         tags: |
           $(tag)
     - task: ArtifactoryDocker@1
@@ -44,4 +45,4 @@ stages:
         command: 'push'
         artifactoryService: 'Art_SVC_conn'
         targetRepo: 'docker-local'
-        imageName: '$(imageName)'
+        imageName: '$(imageName):$(tag)'

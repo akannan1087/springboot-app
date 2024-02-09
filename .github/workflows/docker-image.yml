@@ -8,6 +8,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v3
+    - name: Build with Maven
+      run: mvn clean install
     - name: Login to DockerHub
       uses: docker/login-action@v2
       with:

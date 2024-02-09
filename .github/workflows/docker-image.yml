@@ -17,4 +17,4 @@ jobs:
       uses: docker/build-push-action@v5      
       with:
         push: true
-        tags: ak/my-image:$(date +%s)
+        tags: ak/my-image:latest

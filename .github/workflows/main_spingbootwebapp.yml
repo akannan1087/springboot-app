@@ -50,4 +50,4 @@ jobs:
           app-name: 'spingbootwebapp'
           slot-name: 'Production'
           publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_E8DC3B9F67F54AE7869487C9D28229FF }}
-          package: '*.war'
+          package: '*.jar'

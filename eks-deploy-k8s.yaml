@@ -3,7 +3,7 @@ kind: Deployment
 metadata:
   labels:
     app: springboot-app
-  name: springboot-app
+  name: springboot-app-deployment
 spec:
   replicas: 4
   selector:
@@ -30,7 +30,7 @@ metadata:
   labels:
     app: springboot-app
     k8s-app: springboot-app
-  name: springboot-app
+  name: springboot-service
 spec:
   ports:
   - name: http

@@ -1,19 +1,20 @@
-apiVersion : apps/v1
+apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: akannanspringbootapp 
+  name: myapp
 spec:
-  replicas: 1
+  replicas: 2
   selector:
     matchLabels:
-      app: akannanspringbootapp
+      app: myapp
   template:
     metadata:
       labels:
-        app: akannanspringbootapp 
+        app: myapp
     spec:
       containers:
-        - name: akannanspringbootapp 
-          image: myacrrepo431.azurecr.io/akannanspringbootapp
-          ports:
-          - containerPort: 80
+      - name: myapp
+        image: suryaacr123.azurecr.io/myapp:latest
+        ports:
+        - containerPort: 80
+        imagePullPolicy: Always

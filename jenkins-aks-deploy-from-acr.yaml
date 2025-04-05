@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: my-springboot-app
-        image: myacrrepo3210.azurecr.io/myacrrepo3210:latest
+        image: muzammil01.azurecr.io/springapp:${BUILD_NUMBER}:latest
         imagePullPolicy: Always
         ports:
         - containerPort: 8085
@@ -33,6 +33,6 @@ spec:
     port: 80
     protocol: TCP
     targetPort: 8085
-  type: LoadBalancer
+  type: NodePort
   selector:
     app: springboot-app

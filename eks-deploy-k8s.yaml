@@ -22,7 +22,7 @@ spec:
         - containerPort: 8085
           name: http
           protocol: TCP
-# service type loadbalancer       
+## service type loadbalancer       
 ---
 apiVersion: v1
 kind: Service
